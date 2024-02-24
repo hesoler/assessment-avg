@@ -1,0 +1,188 @@
+:root {
+  height: 100vh;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  --backgroundColor: rgba(244, 248, 250, 0.959);
+  --backgroundFont: #171c25;
+  --backgroundNavBarLeft: rgb(110, 109, 109);
+  --backgroundArticlesContainer: #f9fbfc;
+  --colorLinkActiveSection: #8e3df7;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/** Atributo para cambiar dinámicamente el tema desde Js */
+[toggleTheme="dark"] {
+  --backgroundColor: #171c25;
+  --backgroundFont: rgba(255, 255, 255, 0.87);
+  --backgroundNavBarLeft: rgb(145, 142, 142);
+  --backgroundArticlesContainer: #21252b;
+  --colorLinkActiveSection: #eb681d;
+}
+
+body {
+  color: var(--backgroundFont);
+  background-color: var(--backgroundColor);
+}
+
+.page-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.navbar {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  margin-bottom: 2rem;
+}
+
+.navbar .nav-list {
+  list-style-type: none; /* Elimina los puntos de lista */
+  width: 100%;
+  margin: 0 auto;
+}
+
+.nav-item {
+  display: inline;
+  margin: 1.5em;
+}
+
+/** Enlaces Navbar */
+#home {
+  color: var(--colorLinkActiveSection);
+}
+.nav-item a {
+  font-weight: 500;
+  color: var(--backgroundFont);
+  cursor: pointer;
+  text-decoration: none; /* Elimina el subrayado de los enlaces */
+}
+.left a {
+  color: var(--backgroundNavBarLeft);
+}
+.nav-item a:hover {
+  color: var(--colorLinkActiveSection);
+}
+
+/** Logotipo Gamor */
+.logo {
+  font-size: 2em;
+  margin: 0 4em;
+  height: 2rem;
+  display: inline-flex;
+}
+
+.widget-logo {
+  height: 0;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0);
+  backdrop-filter: blur(5px) opacity(1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ffffff0e;
+  border-radius: 50%;
+  left: 12px;
+  top: 8px;
+  padding: 0.85rem;
+}
+
+/** Checkbox para activar modo oscuro */
+.theme-label span {
+  width: 6rem;
+}
+
+/* slider round container */
+#theme {
+  appearance: none;
+  position: relative;
+  display: inline-block;
+  background: lightgrey;
+  height: 1.65rem;
+  width: 2.75rem;
+  vertical-align: middle;
+  border-radius: 2rem;
+  box-shadow: 0px 1px 3px #0003 inset;
+  transition: 0.25s linear background;
+}
+/* slider round */
+#theme::before {
+  content: "";
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
+  background: #fff;
+  border-radius: 1.2rem;
+  position: absolute;
+  top: 0.2rem;
+  left: 0.2rem;
+  box-shadow: 0px 1px 3px #0003;
+  transition: 0.25s linear transform;
+  transform: translateX(0rem);
+}
+
+#theme:checked::before {
+  transform: translateX(1rem);
+}
+/* activar modo oscuro */
+#theme:checked {
+  background: #eb681d;
+}
+
+#theme:checked ~ .light-theme-label {
+  display: none;
+}
+
+#theme:checked ~ .dark-theme-label {
+  display: inline-block;
+}
+
+/* desactivar modo oscuro */
+#theme:not(:checked) ~ .dark-theme-label {
+  display: none;
+}
+
+#theme:not(:checked) ~ .light-theme-label {
+  display: inline-block;
+}
+
+.btn-register {
+  border-radius: 30px;
+  border: 2px solid #615c5c;
+  padding: 1em 1.5em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #111216;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  box-shadow: 0px 0px 0px 0px #111216;
+}
+
+.btn-register:hover {
+  border: 2px solid var(--colorLinkActiveSection);
+  /* outline: 2px ridge var(--colorLinkActiveSection); */
+}
+
+.btn-register:active {
+  background-color: var(--colorLinkActiveSection);
+  transition: 0.15s linear background;
+}
+main {
+  margin: 0 auto; /* Centra horizontalmente */
+  background-color: var(--backgroundArticlesContainer);
+  border-radius: 15px;
+}
+
+main section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 50px;
+}
