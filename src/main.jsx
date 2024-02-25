@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
 import './index.css'
+import { MainSection } from './components/MainSection.jsx'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById('main-content')).render(
   <React.StrictMode>
-    <App />
+    <MainSection />
   </React.StrictMode>
 )

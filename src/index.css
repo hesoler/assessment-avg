@@ -1,4 +1,7 @@
 :root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
   height: 100vh;
   min-width: 320px;
   min-height: 100vh;
@@ -11,7 +14,8 @@
   --backgroundFont: #171c25;
   --backgroundNavBarLeft: rgb(110, 109, 109);
   --backgroundArticlesContainer: #f9fbfc;
-  --colorLinkActiveSection: #8e3df7;
+  --contrastThemeColor: #8e3df7;
+  --contrastThemeColor2: #eb681d;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -24,18 +28,14 @@
   --backgroundColor: #171c25;
   --backgroundFont: rgba(255, 255, 255, 0.87);
   --backgroundNavBarLeft: rgb(145, 142, 142);
-  --backgroundArticlesContainer: #21252b;
-  --colorLinkActiveSection: #eb681d;
+  --backgroundArticlesContainer: #1f252e;
+  --contrastThemeColor: #eb681d;
+  --contrastThemeColor2: #8e3df7;
 }
 
 body {
   color: var(--backgroundFont);
   background-color: var(--backgroundColor);
-}
-
-.page-container {
-  width: 80%;
-  margin: 0 auto;
 }
 
 .navbar {
@@ -47,18 +47,19 @@ body {
 
 .navbar .nav-list {
   list-style-type: none; /* Elimina los puntos de lista */
+  padding: 0; /* Elimina la sangría */
   width: 100%;
   margin: 0 auto;
 }
 
 .nav-item {
   display: inline;
-  margin: 1.5em;
+  margin: 1.2em;
 }
 
 /** Enlaces Navbar */
 #home {
-  color: var(--colorLinkActiveSection);
+  color: var(--contrastThemeColor);
 }
 .nav-item a {
   font-weight: 500;
@@ -70,13 +71,13 @@ body {
   color: var(--backgroundNavBarLeft);
 }
 .nav-item a:hover {
-  color: var(--colorLinkActiveSection);
+  color: var(--contrastThemeColor);
 }
 
 /** Logotipo Gamor */
 .logo {
   font-size: 2em;
-  margin: 0 4em;
+  margin: 0 4.6em;
   height: 2rem;
   display: inline-flex;
 }
@@ -98,12 +99,13 @@ body {
 .theme-label span {
   width: 6rem;
 }
-
+.theme-label * {
+  display: inline-flex;
+}
 /* slider round container */
 #theme {
   appearance: none;
   position: relative;
-  display: inline-block;
   background: lightgrey;
   height: 1.65rem;
   width: 2.75rem;
@@ -115,7 +117,6 @@ body {
 /* slider round */
 #theme::before {
   content: "";
-  display: block;
   width: 1.25rem;
   height: 1.25rem;
   background: #fff;
@@ -167,15 +168,18 @@ body {
 }
 
 .btn-register:hover {
-  border: 2px solid var(--colorLinkActiveSection);
-  /* outline: 2px ridge var(--colorLinkActiveSection); */
+  border: 2px solid var(--contrastThemeColor);
+  /* outline: 2px ridge var(--contrastThemeColor); */
 }
 
 .btn-register:active {
-  background-color: var(--colorLinkActiveSection);
+  background-color: var(--contrastThemeColor);
   transition: 0.15s linear background;
 }
+
+/** Sección principal */
 main {
+  width: 98%;
   margin: 0 auto; /* Centra horizontalmente */
   background-color: var(--backgroundArticlesContainer);
   border-radius: 15px;
@@ -184,5 +188,43 @@ main {
 main section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 50px;
+}
+
+#main-content article {
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.panel-1 {
+  padding-top: 4rem;
+  display: grid;
+  gap: 2em;
+  place-items: center;
+}
+.high-text p {
+  font-size: 36px;
+  margin: 0;
+  padding: 0em;
+}
+
+/* Borde circular para todos excepto el primer hijo */
+.high-text p:not(:first-of-type) {
+  border: 1px solid var(--contrastThemeColor2);
+  border-top: none;
+  border-radius: 50%;
+  /* transform: rotate(-45deg); */
+}
+/* Segundo hijo p */
+.high-text p:nth-child(2) {
+  color: var(--contrastThemeColor2);
+}
+
+.panel-1 label {
+  display: flex;
+  height: 5rem;
+}
+.panel-1 label b {
+  text-decoration: underline var(--contrastThemeColor);
+  /* border-bottom: 2px solid var(--contrastThemeColor); */
 }
