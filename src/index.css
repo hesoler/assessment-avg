@@ -40,72 +40,57 @@ body {
   background-color: var(--backgroundColor);
 }
 
+/** Navbar */
 .navbar {
-  width: 100%;
-  min-width: 450px;
-  display: grid;
+  display: -moz-inline-grid;
   place-items: center;
-  margin-bottom: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1280px));
+  margin-bottom: 5rem;
 }
-
-.navbar .nav-list {
-  list-style-type: none; /* Elimina los puntos de lista */
-  padding: 0; /* Elimina la sangría */
-  width: 100%;
-  margin: 0 auto;
+.navbar span {
+  display: inline-block;
+  width: max-content;
 }
-
-.nav-item {
-  display: inline;
-  margin: 1.2em;
-}
-
-/** Enlaces Navbar */
-#home {
-  color: var(--contrastThemeColor);
-}
-.nav-item a {
+.nav-items a {
+  margin-inline: 1.2em;
   font-weight: 500;
   color: var(--backgroundFont);
   cursor: pointer;
   text-decoration: none; /* Elimina el subrayado de los enlaces */
 }
+.nav-items a:hover {
+  color: var(--contrastThemeColor);
+}
+#home {
+  color: var(--contrastThemeColor);
+}
+
 .left a {
   color: var(--backgroundNavBarLeft);
-}
-.nav-item a:hover {
-  color: var(--contrastThemeColor);
 }
 
 /** Logotipo Gamor */
 .logo {
-  font-family: Arial;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif, Arial;
   font-size: 2rem;
-  margin: 0 4.6em;
-  display: inline-flex;
+  margin-inline: 10rem;
 }
 
 .widget-logo {
-  height: 0;
   position: relative;
   background-color: rgba(255, 255, 255, 0);
   backdrop-filter: blur(5px) opacity(1);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border: 1px solid #ffffff0e;
   border-radius: 50%;
-  left: 12px;
-  top: 8px;
-  padding: 0.85rem;
+  left: 18px;
+  top: 2px;
+  padding: 0.8rem;
 }
 
 /** Checkbox para activar modo oscuro */
-.theme-label span {
-  width: 6rem;
-}
-.theme-label * {
-  display: inline-flex;
-}
-/* slider round container */
+/* Contenedor del slider round */
 #theme {
   appearance: none;
   position: relative;
@@ -139,11 +124,9 @@ body {
 #theme:checked {
   background: #eb681d;
 }
-
 #theme:checked ~ .light-theme-label {
   display: none;
 }
-
 #theme:checked ~ .dark-theme-label {
   display: inline-block;
 }
@@ -152,7 +135,6 @@ body {
 #theme:not(:checked) ~ .dark-theme-label {
   display: none;
 }
-
 #theme:not(:checked) ~ .light-theme-label {
   display: inline-block;
 }
@@ -237,10 +219,10 @@ main section {
 .high-text p:nth-child(2) {
   color: var(--contrastThemeColor2);
 }
-
 .panel-1 .low-text {
   display: inline;
 }
+/* Viñeta debajo de "stream party" */
 .panel-1 .low-text .curve {
   width: 100px;
   height: 1rem;
