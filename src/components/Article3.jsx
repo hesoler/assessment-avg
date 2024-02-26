@@ -2,6 +2,6 @@ import React from 'react'
 
 export const Article3 = () => {
   return (
-    <article>Article3</article>
+    <article panel-3>Article3</article>
   )
 }
