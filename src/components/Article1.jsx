@@ -1,4 +1,4 @@
-export function Article1 () {
+export const Article1 = () => {
   const highTextList = ['start', 'streaming', 'games', 'differently']
 
   return (
