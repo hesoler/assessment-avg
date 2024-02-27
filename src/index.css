@@ -54,7 +54,7 @@ body {
   width: max-content;
 }
 .nav-items a {
-  margin-inline: 1.2em;
+  margin-inline: 1.2rem;
   font-weight: 500;
   color: var(--backgroundFont);
   cursor: pointer;
@@ -143,7 +143,7 @@ body {
   border: 2px solid #615c5c;
   width: 10rem;
   aspect-ratio: 2.8;
-  font-size: 1em;
+  font-size: 1rem;
   font-weight: 500;
   font-family: inherit;
   background-color: #111216;
