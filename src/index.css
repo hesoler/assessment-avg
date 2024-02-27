@@ -11,11 +11,12 @@
 
   color-scheme: light dark;
   --backgroundColor: rgba(244, 248, 250, 0.959);
-  --backgroundFont: #171c25;
+  --backgroundFont: black;
   --backgroundNavBarLeft: rgb(110, 109, 109);
   --backgroundArticlesContainer: #f9fbfc;
   --contrastThemeColor: #8e3df7;
   --contrastThemeColor2: #eb681d;
+  --contrastThemeColor3: #611db9;
   --colorButtonPanel1: #f9fbfc;
 
   font-synthesis: none;
@@ -30,8 +31,9 @@
   --backgroundFont: rgba(255, 255, 255, 0.87);
   --backgroundNavBarLeft: rgb(145, 142, 142);
   --backgroundArticlesContainer: #1f252e;
-  --contrastThemeColor: #eb681d;
+  --contrastThemeColor: #e47a3d;
   --contrastThemeColor2: #8e3df7;
+  --contrastThemeColor3: #b85116;
   --colorButtonPanel1: #31363a;
 }
 
@@ -58,15 +60,14 @@ body {
   cursor: pointer;
   text-decoration: none; /* Elimina el subrayado de los enlaces */
 }
+.left a:not(:first-child) {
+  color: var(--backgroundNavBarLeft);
+}
+.left a:first-child {
+  color: var(--backgroundFont);
+}
 .nav-items a:hover {
   color: var(--contrastThemeColor);
-}
-#home {
-  color: var(--contrastThemeColor);
-}
-
-.left a {
-  color: var(--backgroundNavBarLeft);
 }
 
 /** Logotipo Gamor */
@@ -116,13 +117,12 @@ body {
   transition: 0.25s linear transform;
   transform: translateX(0rem);
 }
-
 #theme:checked::before {
   transform: translateX(1rem);
 }
 /* activar modo oscuro */
 #theme:checked {
-  background: #eb681d;
+  background: var(--contrastThemeColor);
 }
 #theme:checked ~ .light-theme-label {
   display: none;
@@ -130,7 +130,6 @@ body {
 #theme:checked ~ .dark-theme-label {
   display: inline-block;
 }
-
 /* desactivar modo oscuro */
 #theme:not(:checked) ~ .dark-theme-label {
   display: none;
@@ -143,7 +142,7 @@ body {
   border-radius: 30px;
   border: 2px solid #615c5c;
   width: 10rem;
-  aspect-ratio: 3;
+  aspect-ratio: 2.8;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
@@ -152,11 +151,9 @@ body {
   transition: border-color 0.25s;
   box-shadow: 0px 0px 0px 0px #111216;
 }
-
 .btn-register:hover {
   border: 2px solid var(--contrastThemeColor);
 }
-
 .btn-register:active {
   background-color: var(--contrastThemeColor);
   transition: 0.15s linear background;
@@ -179,31 +176,29 @@ main section {
   width: 100%;
   display: grid;
   place-items: center;
+  height: 715px;
 }
 
-.panel-1 {
-  padding: 8rem 0 5rem 0;
-  display: grid;
-  gap: 5.5em;
-  place-items: center;
-}
-
-.high-text {
+.panel-1 .high-text {
   width: 70%;
   text-align: left;
+  margin-top: 5rem;
 }
-
-.high-text p {
+.panel-1 .high-text p {
   font-size: 64px;
   margin: 0;
   height: 4.5rem;
 }
+/* Segundo hijo p */
+.panel-1 .high-text p:nth-child(2) {
+  color: var(--contrastThemeColor2);
+}
 
 /* Borde circular para todos excepto el primer hijo */
-.high-text p:not(:first-of-type) {
+.panel-1 .high-text p:not(:first-of-type) {
   transform: skewX(0);
 }
-.high-text p:not(:first-of-type)::before {
+.panel-1 .high-text p:not(:first-of-type)::before {
   content: "";
   position: absolute;
   margin: -10px 5px;
@@ -215,12 +210,10 @@ main section {
   border-top: none;
   transform: skewX(-10deg) skewY(-10deg) rotate(0deg);
 }
-/* Segundo hijo p */
-.high-text p:nth-child(2) {
-  color: var(--contrastThemeColor2);
-}
+
 .panel-1 .low-text {
   display: inline;
+  margin-top: -2rem;
 }
 /* Viñeta debajo de "stream party" */
 .panel-1 .low-text .curve {
@@ -233,11 +226,12 @@ main section {
 }
 
 .panel-1 .links {
-  margin-top: -4em;
+  margin-top: -6em;
+  margin-left: -2rem;
+  display: inline-block;
 }
 .panel-1 .links * {
-  display: inline-block;
-  margin: 1rem;
+  margin-inline: 1rem;
 }
 .panel-1 .links button {
   background-color: var(--colorButtonPanel1);
@@ -261,4 +255,7 @@ main section {
 
 .panel-2 {
   background-color: var(--contrastThemeColor);
+}
+.panel-2 h3 {
+  color: var(--contrastThemeColor3);
 }
