@@ -10,14 +10,19 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  --backgroundColor: rgba(244, 248, 250, 0.959);
-  --backgroundFont: black;
-  --backgroundNavBarLeft: rgb(110, 109, 109);
-  --backgroundArticlesContainer: #f9fbfc;
-  --contrastThemeColor: #8e3df7;
-  --contrastThemeColor2: #eb681d;
-  --contrastThemeColor3: #611db9;
-  --colorButtonPanel1: #f9fbfc;
+  --backgroundColor: rgb(227, 228, 230);
+  --colorFont: black;
+  --colorNavBarLeft: rgb(100, 98, 98);
+  --backgroundArticlesContainer: #eceef0;
+  --contrastSchemeColor: #8e3df7;
+  --contrastSchemeColor2: #eb681d;
+  --contrastSchemeColor3: #611db9;
+  --backgroundColorButtonPanel1: #f9fbfc;
+  --backgroundColorPlatformsSpan: rgb(248, 248, 248);
+  --colorPlatformButton: rgb(71, 70, 70);
+  --backgroundColorPlatformButton: rgb(224, 223, 223);
+  --backgroundColorPlatformButtonHover: rgba(218, 219, 221, 0.733);
+  --backgroundFontPlatformButton: black;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -26,19 +31,23 @@
 }
 
 /** Atributo para cambiar dinámicamente el tema desde Js */
-[toggleTheme="dark"] {
+[toggleScheme="dark"] {
   --backgroundColor: #171c25;
-  --backgroundFont: rgba(255, 255, 255, 0.87);
-  --backgroundNavBarLeft: rgb(145, 142, 142);
+  --colorFont: rgba(255, 255, 255, 0.87);
+  --colorNavBarLeft: rgb(145, 140, 140);
   --backgroundArticlesContainer: #1f252e;
-  --contrastThemeColor: #e47a3d;
-  --contrastThemeColor2: #8e3df7;
-  --contrastThemeColor3: #b85116;
-  --colorButtonPanel1: #31363a;
+  --contrastSchemeColor: #e47a3d;
+  --contrastSchemeColor2: #8e3df7;
+  --contrastSchemeColor3: #b85116;
+  --backgroundColorButtonPanel1: #31363a;
+  --backgroundColorPlatformsSpan: #171c25;
+  --colorPlatformButton: rgb(182, 177, 177);
+  --backgroundColorPlatformButton: #171c25;
+  --backgroundColorPlatformButtonHover: rgba(80, 85, 94, 0.384);
 }
 
 body {
-  color: var(--backgroundFont);
+  color: var(--colorFont);
   background-color: var(--backgroundColor);
 }
 
@@ -56,18 +65,18 @@ body {
 .nav-items a {
   margin-inline: 1.2rem;
   font-weight: 500;
-  color: var(--backgroundFont);
+  color: var(--colorFont);
   cursor: pointer;
   text-decoration: none; /* Elimina el subrayado de los enlaces */
 }
 .left a:not(:first-child) {
-  color: var(--backgroundNavBarLeft);
+  color: var(--colorNavBarLeft);
 }
 .left a:first-child {
-  color: var(--backgroundFont);
+  color: var(--colorFont);
 }
 .nav-items a:hover {
-  color: var(--contrastThemeColor);
+  color: var(--contrastSchemeColor);
 }
 
 /** Logotipo Gamor */
@@ -91,8 +100,12 @@ body {
 }
 
 /** Checkbox para activar modo oscuro */
+#scheme {
+  display: inline-block;
+}
+
 /* Contenedor del slider round */
-#theme {
+#sliderRound {
   appearance: none;
   position: relative;
   background: lightgrey;
@@ -104,7 +117,7 @@ body {
   transition: 0.25s linear background;
 }
 /* slider round */
-#theme::before {
+#sliderRound::before {
   content: "";
   width: 1.25rem;
   height: 1.25rem;
@@ -117,31 +130,19 @@ body {
   transition: 0.25s linear transform;
   transform: translateX(0rem);
 }
-#theme:checked::before {
+#sliderRound:checked::before {
   transform: translateX(1rem);
 }
 /* activar modo oscuro */
-#theme:checked {
-  background: var(--contrastThemeColor);
-}
-#theme:checked ~ .light-theme-label {
-  display: none;
-}
-#theme:checked ~ .dark-theme-label {
-  display: inline-block;
-}
-/* desactivar modo oscuro */
-#theme:not(:checked) ~ .dark-theme-label {
-  display: none;
-}
-#theme:not(:checked) ~ .light-theme-label {
-  display: inline-block;
+#sliderRound:checked {
+  background: var(--contrastSchemeColor);
 }
 
 .btn-register {
   border-radius: 30px;
   border: 2px solid #615c5c;
   width: 10rem;
+  color: rgba(255, 255, 255, 0.87);
   aspect-ratio: 2.8;
   font-size: 1rem;
   font-weight: 500;
@@ -152,10 +153,10 @@ body {
   box-shadow: 0px 0px 0px 0px #111216;
 }
 .btn-register:hover {
-  border: 2px solid var(--contrastThemeColor);
+  border: 2px solid var(--contrastSchemeColor);
 }
 .btn-register:active {
-  background-color: var(--contrastThemeColor);
+  background-color: var(--contrastSchemeColor);
   transition: 0.15s linear background;
 }
 
@@ -191,7 +192,7 @@ main section {
 }
 /* Segundo hijo p */
 .panel-1 .high-text p:nth-child(2) {
-  color: var(--contrastThemeColor2);
+  color: var(--contrastSchemeColor2);
 }
 
 /* Borde circular para todos excepto el primer hijo */
@@ -204,7 +205,7 @@ main section {
   margin: -10px 5px;
   width: 95%;
   height: 15vh;
-  border: 1px solid var(--contrastThemeColor2);
+  border: 1px solid var(--contrastSchemeColor2);
   top: -2rem;
   border-radius: 50%;
   border-top: none;
@@ -221,7 +222,7 @@ main section {
   height: 1rem;
   left: 7rem;
   position: relative;
-  border-top: solid 3px var(--contrastThemeColor);
+  border-top: solid 3px var(--contrastSchemeColor);
   border-radius: 50% 40% 0% 0%;
 }
 
@@ -234,28 +235,88 @@ main section {
   margin-inline: 1rem;
 }
 .panel-1 .links button {
-  background-color: var(--colorButtonPanel1);
-  color: var(--backgroundFont);
+  background-color: var(--backgroundColorButtonPanel1);
+  color: var(--colorFont);
   box-shadow: 1px 1px 10px 0px #0003;
   border: none;
 }
 .panel-1 .links button:hover {
-  border: 1px solid var(--contrastThemeColor);
+  border: 1px solid var(--contrastSchemeColor);
 }
 .panel-1 .links button:active {
-  background-color: var(--contrastThemeColor);
+  background-color: var(--contrastSchemeColor);
 }
 .panel-1 .links a {
   text-decoration: none;
-  color: var(--backgroundFont);
+  color: var(--colorFont);
 }
 .panel-1 .links a:hover {
-  color: var(--contrastThemeColor);
+  color: var(--contrastSchemeColor);
 }
 
 .panel-2 {
-  background-color: var(--contrastThemeColor);
+  background-color: var(--contrastSchemeColor);
 }
 .panel-2 h3 {
-  color: var(--contrastThemeColor3);
+  color: var(--contrastSchemeColor3);
+}
+
+.panel-2 .timeLeft {
+  background-color: rgba(244, 248, 250, 0.959);
+  color: var(--contrastSchemeColor);
+  border: none;
+  border-radius: 30px;
+  width: 10rem;
+  aspect-ratio: 2.8;
+  font-size: 1.6rem;
+  font-weight: bold;
+  font-family: inherit;
+}
+
+.panel-2 img {
+  width: 100%;
+  object-fit: cover;
+  max-width: 450px;
+  height: auto;
+}
+
+.panel-3 ol li {
+  list-style: decimal-leading-zero;
+  font-size: 24px;
+  color: var(--colorNavBarLeft);
+  width: 100%;
+}
+.panel-3 ol li p {
+  color: var(--colorFont);
+  font-size: 18px;
+  font-weight: bold;
+}
+.panel-3 .platforms {
+  background-color: var(--backgroundColorPlatformsSpan);
+  border-radius: 30px;
+  padding: 1rem 5px;
+  margin-left: -4rem;
+  width: 2rem;
+  color: #b85116;
+}
+
+.panel-3 .platforms input {
+  display: inline-block;
+  border-radius: 30px;
+  font-size: 16px;
+  /* font-weight: bold; */
+  padding: 0.8rem;
+  width: 5.8rem;
+  margin-inline: 2px;
+  border: none;
+  cursor: pointer;
+  color: var(--colorPlatformButton);
+  background-color: var(--backgroundColorPlatformsSpan);
+}
+.panel-3 .platform:hover {
+  background-color: var(--backgroundColorPlatformButtonHover);
+}
+.panel-3 .platform-selected {
+  background-color: var(--backgroundColorPlatformButtonHover) !important;
+  color: var(--colorFont) !important;
 }
