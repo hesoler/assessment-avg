@@ -69,11 +69,21 @@ body {
   cursor: pointer;
   text-decoration: none; /* Elimina el subrayado de los enlaces */
 }
-.left a:not(:first-child) {
+.nav-left a:not(:first-child) {
   color: var(--colorNavBarLeft);
 }
-.left a:first-child {
+.nav-left a:first-child {
   color: var(--colorFont);
+}
+.visited::before {
+  content: "";
+  position: absolute;
+  margin: -8px -28px;
+  height: 35px;
+  border: 1px solid var(--contrastSchemeColor);
+  border-radius: 50%;
+  border-top: none;
+  transform: skewX(-10deg) skewY(-10deg) rotate(0deg);
 }
 .nav-items a:hover {
   color: var(--contrastSchemeColor);
@@ -150,7 +160,7 @@ body {
   background-color: #111216;
   cursor: pointer;
   transition: border-color 0.25s;
-  box-shadow: 0px 0px 0px 0px #111216;
+  box-shadow: 0px 15px 30px -20px #111216;
 }
 .btn-register:hover {
   border: 2px solid var(--contrastSchemeColor);
@@ -257,8 +267,38 @@ main section {
 .panel-2 {
   background-color: var(--contrastSchemeColor);
 }
+.panel-2 h2 {
+  margin-top: 4rem;
+  color: white;
+}
 .panel-2 h3 {
+  margin-top: -2.5rem;
   color: var(--contrastSchemeColor3);
+}
+
+.panel-2 span {
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  margin-top: -1rem;
+  margin-left: -1rem;
+}
+.panel-2 .addUser {
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.288);
+  backdrop-filter: blur(5px) opacity(8);
+  margin-right: -1.2rem;
+  width: 100%;
+  margin-bottom: -6px;
+  padding: 9px;
+  max-width: 40px;
+  height: auto;
+  cursor: pointer;
+}
+.panel-2 .addUser:hover {
+  background-color: rgba(255, 255, 255, 0.514);
 }
 
 .panel-2 .timeLeft {
@@ -266,14 +306,19 @@ main section {
   color: var(--contrastSchemeColor);
   border: none;
   border-radius: 30px;
-  width: 10rem;
+  width: 9.5rem;
+  height: 62px;
   aspect-ratio: 2.8;
   font-size: 1.6rem;
   font-weight: bold;
   font-family: inherit;
+  text-align: center;
+}
+.panel-2 .timeLeft p {
+  margin-top: 17px;
 }
 
-.panel-2 img {
+.panel-2 .fortnite-character {
   width: 100%;
   object-fit: cover;
   max-width: 450px;
@@ -285,6 +330,9 @@ main section {
   font-size: 24px;
   color: var(--colorNavBarLeft);
   width: 100%;
+}
+.panel-3 ol li::before {
+  content: "";
 }
 .panel-3 ol li p {
   color: var(--colorFont);
