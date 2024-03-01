@@ -248,7 +248,7 @@ main section {
   background-color: var(--backgroundColorButtonPanel1);
   color: var(--colorFont);
   box-shadow: 1px 1px 10px 0px #0003;
-  border: none;
+  border: transparent;
 }
 .panel-1 .links button:hover {
   border: 1px solid var(--contrastSchemeColor);
