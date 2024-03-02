@@ -1,14 +1,25 @@
+import { useEffect } from 'react'
+import { useGenerateRandomColor } from '../hooks/useGenerateRandomColor'
+
 export const Category = ({ title, imageUrl }) => {
+  const { color, generateColor } = useGenerateRandomColor()
   const style = {
-    backgroundImage: `url(${imageUrl})`,
+    backgroundImage: imageUrl ? `url(${imageUrl})` : '',
     backgroundBlendMode: 'lighten',
-    backgroundColor: 'rgba(142, 61, 247, 0.7)'
+    backgroundColor: imageUrl ? 'rgba(142, 61, 247, 0.7)' : ''
   }
 
+  useEffect(() => generateColor(), [])
+
   return (
-    <li className='category' style={imageUrl && style}>
-      <h2>{title}</h2>
-      <p>➡</p>
-    </li>
+    <span className='category' style={style}>
+      <em style={{ color }}>
+        <strong>/</strong>
+      </em>
+      <li>
+        <h2>{title}</h2>
+        <p>➡</p>
+      </li>
+    </span>
   )
 }
