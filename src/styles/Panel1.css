@@ -1,0 +1,75 @@
+@import url(./var.css);
+
+.panel-1 .high-text {
+  width: 70%;
+  text-align: left;
+  margin-top: 5rem;
+}
+.panel-1 .high-text p {
+  font-size: 64px;
+  margin: 0;
+  height: 4.5rem;
+}
+/* Segundo hijo p */
+.panel-1 .high-text p:nth-child(2) {
+  color: var(--contrastSchemeColor2);
+}
+
+/* Borde circular para todos excepto el primer hijo */
+.panel-1 .high-text p:not(:first-of-type) {
+  transform: skewX(0);
+}
+.panel-1 .high-text p:not(:first-of-type)::before {
+  content: "";
+  position: fixed;
+  margin: -10px 5px;
+  width: 95%;
+  height: 8rem;
+  border: 1px solid var(--contrastSchemeColor2);
+  top: -2rem;
+  border-radius: 50%;
+  border-top: none;
+  transform: skewX(-10deg) skewY(-10deg) rotate(0deg);
+}
+
+.panel-1 .low-text {
+  display: inline;
+  margin-top: -2rem;
+}
+/* Viñeta debajo de "stream party" */
+.panel-1 .low-text .curve {
+  width: 100px;
+  height: 1rem;
+  left: 7rem;
+  position: relative;
+  border-top: solid 3px var(--contrastSchemeColor);
+  border-radius: 50% 40% 0% 0%;
+}
+
+.panel-1 .links {
+  margin-top: -6em;
+  margin-left: -2rem;
+  display: inline-block;
+}
+.panel-1 .links * {
+  margin-inline: 1rem;
+}
+.panel-1 .links button {
+  background-color: var(--backgroundColorButtonPanel1);
+  color: var(--colorFont);
+  box-shadow: 1px 1px 10px 0px #0003;
+  border: transparent;
+}
+.panel-1 .links button:hover {
+  border: 1px solid var(--contrastSchemeColor);
+}
+.panel-1 .links button:active {
+  background-color: var(--contrastSchemeColor);
+}
+.panel-1 .links a {
+  text-decoration: none;
+  color: var(--colorFont);
+}
+.panel-1 .links a:hover {
+  color: var(--contrastSchemeColor);
+}

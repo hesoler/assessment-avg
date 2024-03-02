@@ -1,13 +1,11 @@
 import { useScheme } from '../hooks/useScheme'
 
 export const SchemeSwitch = () => {
-  const { labelText, scheme, handleColorSchemeChange } = useScheme()
-  const checked = scheme !== 'dark'
-
+  const { labelText, setChecked } = useScheme()
   return (
-    <>
-      <input id='sliderRound' type='checkbox' defaultChecked={checked} onChange={handleColorSchemeChange} />
+    <span id='scheme'>
+      <input id='sliderRound' type='checkbox' defaultChecked onChange={event => setChecked(event.target.checked)} />
       <label htmlFor='sliderRound'>{labelText}</label>
-    </>
+    </span>
   )
 }

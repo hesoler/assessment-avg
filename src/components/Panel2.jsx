@@ -1,16 +1,7 @@
-import { useEffect, useState } from 'react'
 import { useScheme } from '../hooks/useScheme'
 
-export const Article2 = () => {
-  const [imageUrl, setImageUrl] = useState('')
-  const { scheme } = useScheme()
-
-  useEffect(() => {
-    const newImageUrl = scheme === 'dark'
-      ? 'src/images/fortnite-character-2.png'
-      : 'src/images/fortnite-character-1.png'
-    setImageUrl(newImageUrl)
-  }, [scheme])
+export const Panel2 = () => {
+  const { fortniteCharacterImageUrl } = useScheme()
 
   return (
     <article className='panel-2'>
@@ -22,7 +13,7 @@ export const Article2 = () => {
           <p>11&nbsp;&nbsp;:&nbsp;&nbsp;45</p>
         </button>
       </span>
-      <img className='fortnite-character' src={imageUrl} alt='Fortnite Character' />
+      <img className='fortnite-character' src={fortniteCharacterImageUrl} alt='Fortnite Character' />
     </article>
   )
 }

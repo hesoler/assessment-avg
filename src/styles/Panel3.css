@@ -1,0 +1,45 @@
+@import url(./var.css);
+
+.panel-3 ol li {
+  list-style: decimal-leading-zero;
+  font-size: 24px;
+  color: var(--colorNavBarLeft);
+  width: 100%;
+}
+.panel-3 ol li::before {
+  content: "";
+}
+.panel-3 ol li p {
+  color: var(--colorFont);
+  font-size: 18px;
+  font-weight: bold;
+}
+.panel-3 .platforms {
+  background-color: var(--backgroundColorPlatformsSpan);
+  border-radius: 30px;
+  padding: 1rem 5px;
+  margin-left: -4rem;
+  width: 2rem;
+  color: #b85116;
+}
+
+.panel-3 .platforms input {
+  display: inline-block;
+  border-radius: 30px;
+  font-size: 16px;
+  /* font-weight: bold; */
+  padding: 0.8rem;
+  width: 5.8rem;
+  margin-inline: 2px;
+  border: none;
+  cursor: pointer;
+  color: var(--colorPlatformButton);
+  background-color: var(--backgroundColorPlatformsSpan);
+}
+.panel-3 .platform:hover {
+  background-color: var(--backgroundColorPlatformButtonHover);
+}
+.panel-3 .platform-selected {
+  background-color: var(--backgroundColorPlatformButtonHover) !important;
+  color: var(--colorFont) !important;
+}

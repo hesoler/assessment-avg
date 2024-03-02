@@ -1,0 +1,49 @@
+:root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  height: 100vh;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  --backgroundColor: rgb(227, 228, 230);
+  --colorLogoFont: black;
+  --colorFont: black;
+  --colorNavBarLeft: rgb(100, 98, 98);
+  --backgroundArticlesContainer: #eceef0;
+  --contrastSchemeColor: #8e3df7;
+  --contrastSchemeColor2: #eb681d;
+  --contrastSchemeColor3: #611db9;
+  --backgroundColorButtonPanel1: #f9fbfc;
+  --backgroundColorPlatformsSpan: rgb(248, 248, 248);
+  --colorPlatformButton: rgb(71, 70, 70);
+  --backgroundColorPlatformButton: rgb(224, 223, 223);
+  --backgroundColorPlatformButtonHover: rgba(218, 219, 221, 0.733);
+  --backgroundFontPlatformButton: black;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/** Atributo para cambiar dinámicamente el tema desde Js */
+[toggleScheme="dark"] {
+  --backgroundColor: #171c25;
+  --colorLogoFont: white;
+  --colorFont: rgba(255, 255, 255, 0.87);
+  --colorNavBarLeft: rgb(145, 140, 140);
+  --backgroundArticlesContainer: #1f252e;
+  --contrastSchemeColor: #e47a3d;
+  --contrastSchemeColor2: #8e3df7;
+  --contrastSchemeColor3: #b85116;
+  --backgroundColorButtonPanel1: #31363a;
+  --backgroundColorPlatformsSpan: #171c25;
+  --colorPlatformButton: rgb(182, 177, 177);
+  --backgroundColorPlatformButton: #171c25;
+  --backgroundColorPlatformButtonHover: rgba(80, 85, 94, 0.384);
+}

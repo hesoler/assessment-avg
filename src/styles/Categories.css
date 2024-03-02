@@ -1,0 +1,51 @@
+/** SECCIÓN DE CATEGORÍAS ****************** */
+@import url(./var.css);
+
+#categories {
+  background-color: transparent;
+  width: 100%;
+}
+
+.categories-list {
+  padding-left: 0;
+  margin-left: -1.2rem;
+  display: grid;
+  gap: 15px;
+  text-align: left;
+  grid-template-columns: repeat(auto-fit, minmax(305px, 300px));
+}
+.categories-list li {
+  margin-left: 1rem;
+  list-style: none;
+  counter-increment: step-counter;
+  padding-top: 2rem;
+  border-radius: 15px;
+  background-color: var(--backgroundArticlesContainer);
+  font-size: 14px;
+  color: var(--colorNavBarLeft);
+  width: 100%;
+  height: 120px;
+  transition: transform 0.4s;
+  cursor: pointer;
+}
+.categories-list li:last-child {
+  list-style: none;
+}
+.categories-list li:hover {
+  transform: scale(1.1);
+}
+.categories-list li * {
+  margin: 0;
+  margin-left: 1rem;
+  color: var(--colorFont);
+  font-weight: bold;
+}
+.categories-list li:not(:last-child):before {
+  content: "/ " counter(step-counter, decimal-leading-zero);
+  margin-left: 1rem;
+  color: var(--colorNavBarLeft);
+}
+.categories-list li:last-child::before {
+  content: "VIEW ALL";
+  margin-left: 1rem;
+}

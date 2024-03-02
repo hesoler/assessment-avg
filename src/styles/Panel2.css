@@ -1,0 +1,62 @@
+@import url(./var.css);
+
+.panel-2 {
+  background-color: var(--contrastSchemeColor);
+}
+.panel-2 h2 {
+  margin-top: 4rem;
+  color: white;
+}
+.panel-2 h3 {
+  margin-top: -2.5rem;
+  color: var(--contrastSchemeColor3);
+}
+
+.panel-2 span {
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  margin-top: -1rem;
+  margin-left: -1rem;
+}
+.panel-2 .addUser {
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.288);
+  backdrop-filter: blur(5px) opacity(8);
+  margin-right: -1.2rem;
+  width: 100%;
+  margin-bottom: -6px;
+  padding: 9px;
+  max-width: 40px;
+  height: auto;
+  cursor: pointer;
+}
+.panel-2 .addUser:hover {
+  background-color: rgba(255, 255, 255, 0.514);
+}
+
+.panel-2 .timeLeft {
+  background-color: rgba(244, 248, 250, 0.959);
+  color: var(--contrastSchemeColor);
+  border: none;
+  border-radius: 30px;
+  width: 9.5rem;
+  height: 62px;
+  aspect-ratio: 2.8;
+  font-size: 1.6rem;
+  font-weight: bold;
+  font-family: inherit;
+  text-align: center;
+}
+.panel-2 .timeLeft p {
+  margin-top: 17px;
+}
+
+.panel-2 .fortnite-character {
+  width: 100%;
+  object-fit: cover;
+  max-width: 450px;
+  height: auto;
+}

@@ -1,4 +1,4 @@
-export const Article1 = () => {
+export const Panel1 = () => {
   const highTextList = ['start', 'streaming', 'games', 'differently']
 
   return (

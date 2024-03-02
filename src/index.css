@@ -1,370 +1,39 @@
-:root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  height: 100vh;
-  min-width: 320px;
-  min-height: 100vh;
-  font-family: Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  --backgroundColor: rgb(227, 228, 230);
-  --colorFont: black;
-  --colorNavBarLeft: rgb(100, 98, 98);
-  --backgroundArticlesContainer: #eceef0;
-  --contrastSchemeColor: #8e3df7;
-  --contrastSchemeColor2: #eb681d;
-  --contrastSchemeColor3: #611db9;
-  --backgroundColorButtonPanel1: #f9fbfc;
-  --backgroundColorPlatformsSpan: rgb(248, 248, 248);
-  --colorPlatformButton: rgb(71, 70, 70);
-  --backgroundColorPlatformButton: rgb(224, 223, 223);
-  --backgroundColorPlatformButtonHover: rgba(218, 219, 221, 0.733);
-  --backgroundFontPlatformButton: black;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/** Atributo para cambiar dinámicamente el tema desde Js */
-[toggleScheme="dark"] {
-  --backgroundColor: #171c25;
-  --colorFont: rgba(255, 255, 255, 0.87);
-  --colorNavBarLeft: rgb(145, 140, 140);
-  --backgroundArticlesContainer: #1f252e;
-  --contrastSchemeColor: #e47a3d;
-  --contrastSchemeColor2: #8e3df7;
-  --contrastSchemeColor3: #b85116;
-  --backgroundColorButtonPanel1: #31363a;
-  --backgroundColorPlatformsSpan: #171c25;
-  --colorPlatformButton: rgb(182, 177, 177);
-  --backgroundColorPlatformButton: #171c25;
-  --backgroundColorPlatformButtonHover: rgba(80, 85, 94, 0.384);
-}
+@import url(styles/var.css);
+@import url(styles/Navbar.css);
+@import url(styles/Panel1.css);
+@import url(styles/Panel2.css);
+@import url(styles/Panel3.css);
+@import url(styles/Categories.css);
 
 body {
   color: var(--colorFont);
   background-color: var(--backgroundColor);
 }
 
-/** Navbar */
-.navbar {
-  display: -moz-inline-grid;
-  place-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1280px));
-  margin-bottom: 5rem;
-}
-.navbar span {
-  display: inline-block;
-  width: max-content;
-}
-.nav-items a {
-  margin-inline: 1.2rem;
-  font-weight: 500;
-  color: var(--colorFont);
-  cursor: pointer;
-  text-decoration: none; /* Elimina el subrayado de los enlaces */
-}
-.nav-left a:not(:first-child) {
-  color: var(--colorNavBarLeft);
-}
-.nav-left a:first-child {
-  color: var(--colorFont);
-}
-.visited::before {
-  content: "";
-  position: absolute;
-  margin: -8px -28px;
-  height: 35px;
-  border: 1px solid var(--contrastSchemeColor);
-  border-radius: 50%;
-  border-top: none;
-  transform: skewX(-10deg) skewY(-10deg) rotate(0deg);
-}
-.nav-items a:hover {
-  color: var(--contrastSchemeColor);
-}
-
-/** Logotipo Gamor */
-.logo {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif, Arial;
-  font-size: 2rem;
-  margin-inline: 10rem;
-}
-
-.widget-logo {
-  position: relative;
-  background-color: rgba(255, 255, 255, 0);
-  backdrop-filter: blur(5px) opacity(1);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border: 1px solid #ffffff0e;
-  border-radius: 50%;
-  left: 18px;
-  top: 2px;
-  padding: 0.8rem;
-}
-
-/** Checkbox para activar modo oscuro */
-#scheme {
-  display: inline-block;
-}
-
-/* Contenedor del slider round */
-#sliderRound {
-  appearance: none;
-  position: relative;
-  background: lightgrey;
-  height: 1.65rem;
-  width: 2.75rem;
-  vertical-align: middle;
-  border-radius: 2rem;
-  box-shadow: 0px 1px 3px #0003 inset;
-  transition: 0.25s linear background;
-}
-/* slider round */
-#sliderRound::before {
-  content: "";
-  width: 1.25rem;
-  height: 1.25rem;
-  background: #fff;
-  border-radius: 1.2rem;
-  position: absolute;
-  top: 0.2rem;
-  left: 0.2rem;
-  box-shadow: 0px 1px 3px #0003;
-  transition: 0.25s linear transform;
-  transform: translateX(0rem);
-}
-#sliderRound:checked::before {
-  transform: translateX(1rem);
-}
-/* activar modo oscuro */
-#sliderRound:checked {
-  background: var(--contrastSchemeColor);
-}
-
-.btn-register {
-  border-radius: 30px;
-  border: 2px solid #615c5c;
-  width: 10rem;
-  color: rgba(255, 255, 255, 0.87);
-  aspect-ratio: 2.8;
-  font-size: 1rem;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #111216;
-  cursor: pointer;
-  transition: border-color 0.25s;
-  box-shadow: 0px 15px 30px -20px #111216;
-}
-.btn-register:hover {
-  border: 2px solid var(--contrastSchemeColor);
-}
-.btn-register:active {
-  background-color: var(--contrastSchemeColor);
-  transition: 0.15s linear background;
-}
-
-/** Sección principal */
 main {
   width: 100%;
   margin: 0 auto; /* Centra horizontalmente */
+}
+main .section {
   background-color: var(--backgroundArticlesContainer);
+  display: block;
+  margin-block: 7rem;
   border-radius: 15px;
 }
 
-main section {
+/** SECCIÓN DE LOS TRES PANELES ********************** */
+#panels {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(410px, 420px));
 }
 
-#main-content article {
+#panels article {
   width: 100%;
   display: grid;
   place-items: center;
   height: 715px;
 }
 
-.panel-1 .high-text {
-  width: 70%;
-  text-align: left;
-  margin-top: 5rem;
-}
-.panel-1 .high-text p {
-  font-size: 64px;
-  margin: 0;
-  height: 4.5rem;
-}
-/* Segundo hijo p */
-.panel-1 .high-text p:nth-child(2) {
-  color: var(--contrastSchemeColor2);
-}
-
-/* Borde circular para todos excepto el primer hijo */
-.panel-1 .high-text p:not(:first-of-type) {
-  transform: skewX(0);
-}
-.panel-1 .high-text p:not(:first-of-type)::before {
-  content: "";
-  position: absolute;
-  margin: -10px 5px;
-  width: 95%;
-  height: 15vh;
-  border: 1px solid var(--contrastSchemeColor2);
-  top: -2rem;
-  border-radius: 50%;
-  border-top: none;
-  transform: skewX(-10deg) skewY(-10deg) rotate(0deg);
-}
-
-.panel-1 .low-text {
-  display: inline;
-  margin-top: -2rem;
-}
-/* Viñeta debajo de "stream party" */
-.panel-1 .low-text .curve {
-  width: 100px;
-  height: 1rem;
-  left: 7rem;
-  position: relative;
-  border-top: solid 3px var(--contrastSchemeColor);
-  border-radius: 50% 40% 0% 0%;
-}
-
-.panel-1 .links {
-  margin-top: -6em;
-  margin-left: -2rem;
-  display: inline-block;
-}
-.panel-1 .links * {
-  margin-inline: 1rem;
-}
-.panel-1 .links button {
-  background-color: var(--backgroundColorButtonPanel1);
-  color: var(--colorFont);
-  box-shadow: 1px 1px 10px 0px #0003;
-  border: transparent;
-}
-.panel-1 .links button:hover {
-  border: 1px solid var(--contrastSchemeColor);
-}
-.panel-1 .links button:active {
-  background-color: var(--contrastSchemeColor);
-}
-.panel-1 .links a {
-  text-decoration: none;
-  color: var(--colorFont);
-}
-.panel-1 .links a:hover {
-  color: var(--contrastSchemeColor);
-}
-
-.panel-2 {
-  background-color: var(--contrastSchemeColor);
-}
-.panel-2 h2 {
-  margin-top: 4rem;
-  color: white;
-}
-.panel-2 h3 {
-  margin-top: -2.5rem;
-  color: var(--contrastSchemeColor3);
-}
-
-.panel-2 span {
-  display: inline-block;
-  width: 100%;
-  height: auto;
+footer {
   text-align: center;
-  margin-top: -1rem;
-  margin-left: -1rem;
-}
-.panel-2 .addUser {
-  border-radius: 50%;
-  border: none;
-  background-color: rgba(255, 255, 255, 0.288);
-  backdrop-filter: blur(5px) opacity(8);
-  margin-right: -1.2rem;
-  width: 100%;
-  margin-bottom: -6px;
-  padding: 9px;
-  max-width: 40px;
-  height: auto;
-  cursor: pointer;
-}
-.panel-2 .addUser:hover {
-  background-color: rgba(255, 255, 255, 0.514);
-}
-
-.panel-2 .timeLeft {
-  background-color: rgba(244, 248, 250, 0.959);
-  color: var(--contrastSchemeColor);
-  border: none;
-  border-radius: 30px;
-  width: 9.5rem;
-  height: 62px;
-  aspect-ratio: 2.8;
-  font-size: 1.6rem;
-  font-weight: bold;
-  font-family: inherit;
-  text-align: center;
-}
-.panel-2 .timeLeft p {
-  margin-top: 17px;
-}
-
-.panel-2 .fortnite-character {
-  width: 100%;
-  object-fit: cover;
-  max-width: 450px;
-  height: auto;
-}
-
-.panel-3 ol li {
-  list-style: decimal-leading-zero;
-  font-size: 24px;
-  color: var(--colorNavBarLeft);
-  width: 100%;
-}
-.panel-3 ol li::before {
-  content: "";
-}
-.panel-3 ol li p {
-  color: var(--colorFont);
-  font-size: 18px;
-  font-weight: bold;
-}
-.panel-3 .platforms {
-  background-color: var(--backgroundColorPlatformsSpan);
-  border-radius: 30px;
-  padding: 1rem 5px;
-  margin-left: -4rem;
-  width: 2rem;
-  color: #b85116;
-}
-
-.panel-3 .platforms input {
-  display: inline-block;
-  border-radius: 30px;
-  font-size: 16px;
-  /* font-weight: bold; */
-  padding: 0.8rem;
-  width: 5.8rem;
-  margin-inline: 2px;
-  border: none;
-  cursor: pointer;
-  color: var(--colorPlatformButton);
-  background-color: var(--backgroundColorPlatformsSpan);
-}
-.panel-3 .platform:hover {
-  background-color: var(--backgroundColorPlatformButtonHover);
-}
-.panel-3 .platform-selected {
-  background-color: var(--backgroundColorPlatformButtonHover) !important;
-  color: var(--colorFont) !important;
 }
