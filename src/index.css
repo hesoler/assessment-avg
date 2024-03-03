@@ -9,16 +9,19 @@ body {
   color: var(--colorFont);
   background-color: var(--backgroundColor);
 }
-
+header .navbar {
+  margin-bottom: 5rem;
+}
 main {
-  width: 100%;
   margin: 0 auto; /* Centra horizontalmente */
+  display: grid;
+  gap: 5rem;
 }
 main .section {
   background-color: var(--backgroundArticlesContainer);
-  display: block;
-  margin-block: 7rem;
+  margin: 0 auto; /* Centra horizontalmente */
   border-radius: 15px;
+  width: 100%;
 }
 
 /** SECCIÓN DE LOS TRES PANELES ********************** */
