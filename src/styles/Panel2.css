@@ -3,24 +3,26 @@
 .panel-2 {
   background-color: var(--contrastSchemeColor);
 }
-.panel-2 h2 {
-  margin-top: 4rem;
+.headers {
+  margin-top: 1.5rem;
+  display: block;
+  text-align: center;
+}
+.headers h2 {
   color: white;
 }
-.panel-2 h3 {
-  margin-top: -2.5rem;
+.headers h3 {
   color: var(--contrastSchemeColor3);
 }
 
-.panel-2 span {
+.middle-widget {
   display: inline-block;
   width: 100%;
   height: auto;
   text-align: center;
-  margin-top: -1rem;
-  margin-left: -1rem;
+  margin-left: -2rem;
 }
-.panel-2 .addUser {
+.middle-widget .addUser {
   border-radius: 50%;
   border: none;
   background-color: rgba(255, 255, 255, 0.288);
@@ -33,11 +35,11 @@
   height: auto;
   cursor: pointer;
 }
-.panel-2 .addUser:hover {
+.middle-widget .addUser:hover {
   background-color: rgba(255, 255, 255, 0.514);
 }
 
-.panel-2 .timeLeft {
+.middle-widget .timeLeft {
   background-color: rgba(244, 248, 250, 0.959);
   color: var(--contrastSchemeColor);
   border: none;
@@ -50,13 +52,65 @@
   font-family: inherit;
   text-align: center;
 }
-.panel-2 .timeLeft p {
+.middle-widget .timeLeft p {
   margin-top: 17px;
 }
 
-.panel-2 .fortnite-character {
+.fortnite-character {
   width: 100%;
   object-fit: cover;
   max-width: 450px;
   height: auto;
+  margin-bottom: -16.5rem;
+  position: absolute;
+}
+.square {
+  position: absolute;
+  border-radius: 15px;
+  background-color: var(--backgroundSquareMiniature);
+  display: flex;
+  flex-direction: column;
+}
+
+.square img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+  max-width: 68px;
+}
+.mini-character-1 {
+  margin-top: 0;
+  margin-bottom: 0rem;
+  margin-left: -15rem;
+  margin-right: 10px;
+}
+.mini-character-2 {
+  margin-top: -4rem;
+  margin-bottom: 1rem;
+  margin-right: -16rem;
+}
+
+#upper-line {
+  border: solid 2px var(--backgroundSquareMiniature) !important;
+  width: 17rem;
+  height: 12rem;
+  border-radius: 50%;
+  border-right: none;
+  border-top: none;
+  border-bottom: none;
+  position: relative;
+  margin-top: 100px;
+}
+
+#lower-line {
+  border: solid 2px var(--backgroundSquareMiniature) !important;
+  width: 280px;
+  height: 12rem;
+  border-radius: 50%;
+  margin-left: -20px;
+  border-left: none;
+  border-top: none;
+  border-bottom: none;
+  position: relative;
 }

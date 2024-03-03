@@ -1,7 +1,7 @@
 /** NAVBAR ***************************/
 @import url(./var.css);
 
-.navbar span {
+.navbar > span {
   display: inline-block;
 }
 
@@ -127,7 +127,7 @@
   .navbar {
     min-width: 500px;
   }
-  .navbar span {
+  .navbar > span {
     margin-block: 15px;
   }
   .logo * {

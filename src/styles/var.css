@@ -24,6 +24,7 @@
   --backgroundColorPlatformButton: rgb(224, 223, 223);
   --backgroundColorPlatformButtonHover: rgba(218, 219, 221, 0.733);
   --backgroundFontPlatformButton: black;
+  --backgroundSquareMiniature: rgb(120, 35, 240);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -46,4 +47,5 @@
   --colorPlatformButton: rgb(182, 177, 177);
   --backgroundColorPlatformButton: #171c25;
   --backgroundColorPlatformButtonHover: rgba(80, 85, 94, 0.384);
+  --backgroundSquareMiniature: rgb(155, 80, 42, 0.5);
 }
