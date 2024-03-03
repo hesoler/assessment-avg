@@ -2,14 +2,14 @@ import { NavLink } from 'react-router-dom'
 import { SchemeSwitch } from './SchemeSwitch'
 
 export const Navbar = () => {
-  const className = ({ isActive }) => { return isActive ? 'link visited' : 'link' }
+  const classVisited = ({ isActive }) => { return isActive ? 'link visited' : 'link' }
   return (
     <nav className='navbar'>
       <span className='nav-items nav-left'>
-        <NavLink className={className} to='home'>Home</NavLink>
-        <NavLink className={className} to='streams'>Streams</NavLink>
-        <NavLink className={className} to='party'>Party</NavLink>
-        <NavLink className={className} to='premium'>Premium</NavLink>
+        <NavLink className={classVisited} to='home'>Home</NavLink>
+        <NavLink className={classVisited} to='streams'>Streams</NavLink>
+        <NavLink className={classVisited} to='party'>Party</NavLink>
+        <NavLink className={classVisited} to='premium'>Premium</NavLink>
       </span>
       <span className='logo'>
         <NavLink className='logo-link' to='home'>
