@@ -21,7 +21,7 @@ const Home = () => {
           <Category title='Fantasy Games' />
           <Category title='Strategy Game' />
           <Category title='Shooter Games' imageUrl='/src/images/shooter-games.png' />
-          <Category title='All Categories' />
+          <Category title='All Categories' last />
         </ol>
       </section>
     </>

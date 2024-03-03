@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useGenerateRandomColor } from '../hooks/useGenerateRandomColor'
 
-export const Category = ({ title, imageUrl }) => {
+export const Category = ({ title, imageUrl, last }) => {
   const { color, generateColor } = useGenerateRandomColor()
   const style = {
     backgroundImage: imageUrl ? `url(${imageUrl})` : '',
@@ -14,7 +14,7 @@ export const Category = ({ title, imageUrl }) => {
   return (
     <span className='category' style={style}>
       <em style={{ color }}>
-        <strong>/</strong>
+        {!last && <strong>/</strong>}
       </em>
       <li>
         <h2>{title}</h2>
