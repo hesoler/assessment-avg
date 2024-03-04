@@ -11,11 +11,13 @@ body {
 }
 header .navbar {
   margin-bottom: 5rem;
+  text-align: center;
 }
 main {
   margin: 0 auto; /* Centra horizontalmente */
   display: grid;
   gap: 5rem;
+  max-width: 1260px;
 }
 main .section {
   background-color: var(--backgroundArticlesContainer);
