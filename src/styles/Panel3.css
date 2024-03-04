@@ -1,45 +1,75 @@
 @import url(./var.css);
 
+.panel-3 ol {
+  display: grid;
+  gap: 2.5rem;
+  width: 100%;
+  max-width: 400px;
+  margin-left: 1.5rem;
+  justify-content: center;
+}
 .panel-3 ol li {
   list-style: decimal-leading-zero;
   font-size: 24px;
   color: var(--colorNavBarLeft);
-  width: 100%;
 }
-.panel-3 ol li::before {
-  content: "";
-}
-.panel-3 ol li p {
+.panel-3 ol .first::before {
+  content: "Choose Platform";
+  position: relative;
+  margin-left: 10px;
   color: var(--colorFont);
-  font-size: 18px;
   font-weight: bold;
+  font-size: 20px;
+  top: 4px;
 }
-.panel-3 .platforms {
-  background-color: var(--backgroundColorPlatformsSpan);
-  border-radius: 30px;
-  padding: 1rem 5px;
-  margin-left: -4rem;
-  width: 2rem;
-  color: #b85116;
+.panel-3 ol .second::before {
+  content: "Searching Games";
+  margin-left: 10px;
+  position: relative;
+  color: var(--colorFont);
+  font-weight: bold;
+  font-size: 20px;
+  top: 4px;
 }
 
-.panel-3 .platforms input {
-  display: inline-block;
+.first > *,
+.second > * {
+  margin-top: 1rem;
+  left: -2rem;
+  position: relative;
+}
+
+.platforms {
+  background-color: var(--backgroundColorPlatformsSpan);
+  border-radius: 30px;
+  padding: 5px;
+  color: #b85116;
+  text-align: center;
+}
+
+.platform {
+  display: inline;
+  position: relative;
   border-radius: 30px;
   font-size: 16px;
-  /* font-weight: bold; */
-  padding: 0.8rem;
-  width: 5.8rem;
+  width: 6.5rem;
+  height: 3rem;
   margin-inline: 2px;
   border: none;
   cursor: pointer;
   color: var(--colorPlatformButton);
   background-color: var(--backgroundColorPlatformsSpan);
 }
-.panel-3 .platform:hover {
+.platform:hover {
   background-color: var(--backgroundColorPlatformButtonHover);
 }
-.panel-3 .platform-selected {
-  background-color: var(--backgroundColorPlatformButtonHover) !important;
-  color: var(--colorFont) !important;
+.platform-selected {
+  background-color: var(--backgroundColorPlatformButtonHover);
+  color: var(--colorFont);
+}
+
+.games-filter {
+  height: 24rem;
+  background-color: var(--backgroundColorPlatformsSpan);
+  border-radius: 15px;
 }

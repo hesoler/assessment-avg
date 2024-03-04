@@ -8,16 +8,15 @@ export const Panel3 = () => {
   return (
     <article className='panel-3'>
       <ol>
-        <li>
-          <p>Choose Platform</p>
-          <span className='platforms'>
+        <li className='first'>
+          <div className='platforms'>
             <input className='platform' type='button' onClick={handleClassSelected} value='🎉 Party' />
             <input className='platform' type='button' onClick={handleClassSelected} value='Match' />
             <input className='platform' type='button' onClick={handleClassSelected} value='Streams' />
-          </span>
+          </div>
         </li>
-        <li>
-          <p>Searching Game</p>
+        <li className='second'>
+          <div className='games-filter' />
         </li>
       </ol>
     </article>
