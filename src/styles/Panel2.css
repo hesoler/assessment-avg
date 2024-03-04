@@ -65,52 +65,96 @@
   position: absolute;
 }
 .square {
-  position: absolute;
+  width: 70px;
+  height: 70px;
   border-radius: 15px;
   background-color: var(--backgroundSquareMiniature);
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+.ball-rate-icon {
+  background-color: black;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+}
+.ball-rate-icon img {
+  object-fit: contain;
+  width: 60%;
+  aspect-ratio: 1;
+  max-width: 28px;
+  height: auto;
+  transform: translate(4.5px, 3.5px);
 }
 
 .square img {
-  width: 100%;
+  width: 90%;
   height: auto;
   aspect-ratio: 1;
   object-fit: contain;
   max-width: 68px;
+  transform: translate(5%, 10%);
 }
+
 .mini-character-1 {
-  margin-top: 0;
-  margin-bottom: 0rem;
-  margin-left: -15rem;
-  margin-right: 10px;
+  top: var(--topMiniature1);
+  left: var(--leftMiniature1);
 }
 .mini-character-2 {
-  margin-top: -4rem;
-  margin-bottom: 1rem;
-  margin-right: -16rem;
+  top: var(--topMiniature2);
+  left: var(--leftMiniature2);
 }
-
-#upper-line {
-  border: solid 2px var(--backgroundSquareMiniature) !important;
-  width: 17rem;
-  height: 12rem;
+.eye-view::before {
+  content: "";
+  background-color: black;
   border-radius: 50%;
-  border-right: none;
-  border-top: none;
-  border-bottom: none;
-  position: relative;
-  margin-top: 100px;
+  width: 25px;
+  height: 50px;
+  display: flexbox;
 }
+.like-heart {
 
-#lower-line {
-  border: solid 2px var(--backgroundSquareMiniature) !important;
+}
+.upper-curve-light {
+  border: solid 2px var(--backgroundSquareMiniature);
+  width: 18rem;
+  height: 10rem;
+  border-radius: 50%;
+  border-bottom: none;
+  border-left: none;
+  position: relative;
+  transform: skewX(-20deg) skewY(-20deg) rotate(20deg) translate(2rem, 0.5rem);
+}
+.lower-curve-light {
+  border: solid 2px var(--backgroundSquareMiniature);
   width: 280px;
   height: 12rem;
   border-radius: 50%;
-  margin-left: -20px;
-  border-left: none;
-  border-top: none;
+  border-right: none;
+  transform: skewX(40deg) skewY(-5deg) rotate(20deg) translate(0rem, -2rem);
+  position: relative;
+}
+
+.upper-curve-dark {
+  border: solid 2px var(--backgroundSquareMiniature);
+  width: 12rem;
+  height: 10rem;
+  border-radius: 50%;
+  border-right: none;
+  margin-left: -2rem;
   border-bottom: none;
+  position: relative;
+  top: -1rem;
+  transform: skewX(-40deg) skewY(-10deg) rotate(-20deg);
+}
+.lower-curve-dark {
+  border: solid 2px var(--backgroundSquareMiniature);
+  width: 280px;
+  height: 12rem;
+  border-radius: 50%;
+  border-left: none;
+  border-bottom: none;
+  transform: skewX(-40deg) skewY(-10deg) rotate(20deg) translate(-5rem, -2rem);
   position: relative;
 }

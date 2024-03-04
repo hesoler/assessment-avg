@@ -1,5 +1,5 @@
 import { useScheme } from '../hooks/useScheme'
-import { ImageSquare } from './ImageSquare'
+import { MiniatureSquare } from './MiniatureSquare'
 
 export const Panel2 = () => {
   const { fortniteCharacterImageUrl, scheme } = useScheme()
@@ -11,6 +11,11 @@ export const Panel2 = () => {
   const miniCharacter2Url = scheme === 'dark'
     ? 'src/images/fortnite-character-4.png'
     : 'src/images/fortnite-character-6.png'
+
+  const beforeAttribute = {
+    miniature1: scheme === 'dark' ? 'eye-view' : '',
+    miniature2: scheme !== 'dark' ? 'like-heart' : ''
+  }
 
   return (
     <article className='panel-2'>
@@ -24,10 +29,16 @@ export const Panel2 = () => {
           </button>
         </span>
       </span>
-      <ImageSquare className='mini-character-1' imageUrl={miniCharacter1Url} />
-      <ImageSquare className='mini-character-2' imageUrl={miniCharacter2Url} />
-      <span id='upper-line' />
-      <span id='lower-line' />
+      <MiniatureSquare
+        classPositionAndMiniIcon={`mini-character-1`}
+        imageUrl={miniCharacter1Url}
+      />
+      <MiniatureSquare
+        classPositionAndMiniIcon={`mini-character-2 ${beforeAttribute.miniature2}`}
+        imageUrl={miniCharacter2Url}
+      />
+      <span className={`upper-curve-${scheme}`} />
+      <span className={`lower-curve-${scheme}`} />
       <img className='fortnite-character' src={fortniteCharacterImageUrl} alt='Fortnite Character' />
     </article>
   )

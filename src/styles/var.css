@@ -1,5 +1,5 @@
 :root {
-  max-width: 1280px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 2rem;
   height: 100vh;
@@ -8,8 +8,11 @@
   font-family: Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
 
   color-scheme: light dark;
+
   --backgroundColor: rgb(227, 228, 230);
   --colorLogoFont: black;
   --colorFont: black;
@@ -26,13 +29,17 @@
   --backgroundFontPlatformButton: black;
   --backgroundSquareMiniature: rgb(120, 35, 240);
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
+  --topMiniature1: 6.5rem;
+  --leftMiniature1: -9rem;
+
+  --topMiniature2: -0.7rem;
+  --leftMiniature2: 7.5rem;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/** Atributo para cambiar dinámicamente el tema desde Js */
+/** Atributo para cambiar el tema de color*/
 [toggleScheme="dark"] {
   --backgroundColor: #171c25;
   --colorLogoFont: white;
@@ -48,4 +55,10 @@
   --backgroundColorPlatformButton: #171c25;
   --backgroundColorPlatformButtonHover: rgba(80, 85, 94, 0.384);
   --backgroundSquareMiniature: rgb(155, 80, 42, 0.5);
+
+  --topMiniature1: 4rem;
+  --leftMiniature1: -8rem;
+
+  --topMiniature2: 6rem;
+  --leftMiniature2: 9.5rem;
 }
