@@ -64,6 +64,7 @@
   margin-bottom: -16.5rem;
   position: absolute;
 }
+
 .square {
   width: 70px;
   height: 70px;
@@ -73,21 +74,6 @@
   flex-direction: column;
   position: relative;
 }
-.ball-rate-icon {
-  background-color: black;
-  border-radius: 50%;
-  width: 25px;
-  height: 25px;
-}
-.ball-rate-icon img {
-  object-fit: contain;
-  width: 60%;
-  aspect-ratio: 1;
-  max-width: 28px;
-  height: auto;
-  transform: translate(4.5px, 3.5px);
-}
-
 .square img {
   width: 90%;
   height: auto;
@@ -105,17 +91,32 @@
   top: var(--topMiniature2);
   left: var(--leftMiniature2);
 }
+
 .eye-view::before {
   content: "";
-  background-color: black;
+  background-image: url("/src/assets/eye.svg");
+  background-size: contain;
+  background-color: rgb(20, 20, 20);
   border-radius: 50%;
-  width: 25px;
-  height: 50px;
-  display: flexbox;
+  width: 20px;
+  height: 20px;
+  left: -8px;
+  top: -6px;
+  position: absolute;
 }
-.like-heart {
+.like-heart::before {
+  content: "";
+  background-image: url("/src/assets/love.svg");
+  background-size: contain;
+  background-color: rgb(26, 25, 25);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  left: -8px;
+  top: -6px;
+  position: absolute;
+}
 
-}
 .upper-curve-light {
   border: solid 2px var(--backgroundSquareMiniature);
   width: 18rem;

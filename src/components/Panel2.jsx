@@ -30,11 +30,11 @@ export const Panel2 = () => {
         </span>
       </span>
       <MiniatureSquare
-        classPositionAndMiniIcon={`mini-character-1`}
+        classPositionAndBadge={`mini-character-1 ${beforeAttribute.miniature1}`}
         imageUrl={miniCharacter1Url}
       />
       <MiniatureSquare
-        classPositionAndMiniIcon={`mini-character-2 ${beforeAttribute.miniature2}`}
+        classPositionAndBadge={`mini-character-2 ${beforeAttribute.miniature2}`}
         imageUrl={miniCharacter2Url}
       />
       <span className={`upper-curve-${scheme}`} />
