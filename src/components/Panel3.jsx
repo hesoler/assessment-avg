@@ -1,3 +1,5 @@
+import { FilterGames } from './FilterGames'
+
 export const Panel3 = () => {
   const handleClassSelected = (event) => {
     const buttons = document.querySelectorAll('.platform')
@@ -7,7 +9,7 @@ export const Panel3 = () => {
 
   return (
     <article className='panel-3'>
-      <ol>
+      <ol className='content'>
         <li className='first'>
           <div className='platforms'>
             <input className='platform' type='button' onClick={handleClassSelected} value='🎉 Party' />
@@ -16,7 +18,7 @@ export const Panel3 = () => {
           </div>
         </li>
         <li className='second'>
-          <div className='games-filter' />
+          <FilterGames />
         </li>
       </ol>
     </article>

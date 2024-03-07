@@ -35,6 +35,12 @@
   --topMiniature2: -0.7rem;
   --leftMiniature2: 7.5rem;
 
+  --bgRowIndex: rgb(236, 236, 236);
+  --bgAddButtonHover: rgb(210, 209, 209);
+  --bgColorSearchButton: rgb(43, 42, 42);
+  --bgColorSearchButtonHover: rgb(84, 83, 83);
+  --colorTextSearchButton: white;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -61,4 +67,10 @@
 
   --topMiniature2: 6rem;
   --leftMiniature2: 9.5rem;
+
+  --bgRowIndex: rgb(16, 18, 26);
+  --bgAddButtonHover: gray;
+  --bgColorSearchButton: rgb(235, 235, 235);
+  --bgColorSearchButtonHover: rgb(193, 193, 193);
+  --colorTextSearchButton: black;
 }

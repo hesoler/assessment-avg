@@ -1,19 +1,20 @@
 @import url(./var.css);
 
-.panel-3 ol {
+.panel-3 .content {
   display: grid;
   gap: 2.5rem;
   width: 100%;
-  max-width: 400px;
-  margin-left: 1.5rem;
+  max-width: 350px;
+  position: relative;
+  left: 1.4rem;
   justify-content: center;
 }
-.panel-3 ol li {
+.panel-3 .content > li {
   list-style: decimal-leading-zero;
   font-size: 24px;
   color: var(--colorNavBarLeft);
 }
-.panel-3 ol .first::before {
+.panel-3 .content .first::before {
   content: "Choose Platform";
   position: relative;
   margin-left: 10px;
@@ -22,7 +23,7 @@
   font-size: 20px;
   top: 4px;
 }
-.panel-3 ol .second::before {
+.panel-3 .content .second::before {
   content: "Searching Games";
   margin-left: 10px;
   position: relative;
@@ -35,7 +36,7 @@
 .first > *,
 .second > * {
   margin-top: 1rem;
-  left: -2rem;
+  left: -2.5rem;
   position: relative;
 }
 
@@ -68,8 +69,153 @@
   color: var(--colorFont);
 }
 
-.games-filter {
-  height: 24rem;
+.filter-games {
+  max-width: 330px;
+  height: 25rem;
   background-color: var(--backgroundColorPlatformsSpan);
   border-radius: 15px;
+  display: grid;
+  place-items: center;
+}
+.filter-games * {
+  font-size: 16px;
+}
+
+.top-filter {
+  top: 1.5rem;
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 30px;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--backgroundArticlesContainer);
+}
+.top-filter > input[type="image"] {
+  margin-inline-end: 1.5rem;
+  aspect-ratio: 1;
+  max-width: 25px;
+}
+.search-field {
+  width: 100%;
+  margin-inline-start: 1.5rem;
+  margin-inline-end: 1rem;
+  background-color: var(--backgroundColorPlatformsSpan);
+  color: var(--colorFont);
+  border: none;
+  outline: none;
+}
+
+table.search-results {
+  position: absolute;
+  top: 6rem;
+  left: 0.5rem;
+  width: 95%;
+  border-spacing: 10px 12px;
+  display: grid;
+  place-items: start;
+  color: var(--colorFont);
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 200px;
+}
+
+.search-results * {
+  font-size: 14px;
+}
+.search-results tr {
+  line-height: 0;
+}
+.search-results td {
+  white-space: nowrap;
+}
+td.team-name {
+  max-width: 6rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.avatar-group {
+  display: inline-flex;
+  flex-direction: row-reverse;
+}
+.member-name {
+  position: absolute;
+  padding: 0.5rem 0.25rem;
+  border-radius: 0.25rem;
+  background-color: rgb(0, 0, 0, 0.7);
+  color: #fff;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.2s;
+  transform: translate(1rem, -0.5rem);
+}
+.member-avatar {
+  transition: 0.2s;
+  display: block;
+  border-radius: 50%;
+  color: var(--colorFont);
+  overflow: hidden;
+  width: 30px;
+  height: 30px;
+  margin-left: -12px;
+}
+.member-avatar:hover {
+  z-index: 1;
+  transform: translateY(-0.5rem);
+}
+.avatar-card:hover .member-name {
+  visibility: visible;
+  opacity: 1;
+}
+.search-results .row-index span {
+  background-color: var(--bgRowIndex);
+  border-radius: 50%;
+  padding: 10px;
+  place-content: center;
+}
+
+.add-to-team {
+  border: none;
+  padding: 10px;
+  background-color: var(--backgroundColorPlatformButtonHover);
+  color: var(--colorFont);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.15s linear background;
+}
+.add-to-team:hover {
+  background-color: var(--bgAddButtonHover);
+}
+
+.gradient {
+  position: absolute;
+  z-index: 1;
+  bottom: 6.5rem;
+  left: 0;
+  pointer-events: none;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(193, 189, 189, 0),
+    var(--backgroundColorPlatformsSpan) 80%
+  );
+  width: 100%;
+  height: 4.5rem;
+}
+.search-button {
+  bottom: 1rem;
+  width: 90%;
+  height: 4rem;
+  position: absolute;
+  background-color: var(--bgColorSearchButton);
+  color: var(--colorTextSearchButton);
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 20px 70px -15px rgb(60, 60, 60);
+}
+.search-button:hover {
+  background-color: var(--bgColorSearchButtonHover);
+  transition: 0.15s linear background;
 }
