@@ -8,3 +8,7 @@ Este es un proyecto que implementé para dar solución a un ejercicio de prueba 
 - [x] Cambio de tema de color
 - [x] Login y autenticación
 - [x] Filtro de búsqueda
+
+### Ejecución
+
+En la consola bash, ejecutar los comandos <code>yarn</code> y <code>yarn dev</code>, en ese orden. El proyecto se lanzará en la url <http://localhost:5173/>
