@@ -1,3 +1,5 @@
+import { NavLink } from 'react-router-dom'
+
 export const Panel1 = () => {
   const highTextList = ['start', 'streaming', 'games', 'differently']
 
@@ -14,7 +16,7 @@ export const Panel1 = () => {
       </span>
       <span className='links'>
         <button className='btn-register'>Create Account</button>
-        <a href='../pages/login.html'>Sign in</a>
+        <NavLink to='/login'>Sign in</NavLink>
       </span>
     </article>
   )

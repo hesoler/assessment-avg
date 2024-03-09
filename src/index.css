@@ -4,6 +4,7 @@
 @import url(styles/Panel2.css);
 @import url(styles/Panel3.css);
 @import url(styles/Categories.css);
+@import url(styles/Login.css);
 
 body {
   color: var(--colorFont);
@@ -13,6 +14,20 @@ header .navbar {
   margin-bottom: 5rem;
   text-align: center;
 }
+
+span.hi {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  font-size: 18px;
+  color: var(--colorFont);
+}
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
 main {
   margin: 0 auto; /* Centra horizontalmente */
   display: grid;
@@ -40,5 +55,6 @@ main .section {
 }
 
 footer {
+  margin-top: 4rem;
   text-align: center;
 }

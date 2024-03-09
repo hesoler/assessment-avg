@@ -41,6 +41,9 @@
   --bgColorSearchButtonHover: rgb(84, 83, 83);
   --colorTextSearchButton: white;
 
+  --bgLoginForm: rgb(235, 235, 235);
+
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -73,4 +76,6 @@
   --bgColorSearchButton: rgb(235, 235, 235);
   --bgColorSearchButtonHover: rgb(193, 193, 193);
   --colorTextSearchButton: black;
+
+  --bgLoginForm: rgb(201, 201, 201);
 }
