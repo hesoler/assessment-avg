@@ -14,7 +14,7 @@ function App () {
       </header>
       {currentUser &&
         <span className='hi'>
-          <p ><b>Welcome, {currentUser.username}!</b></p>
+          <p><b>Welcome, {currentUser.username}!</b></p>
           <img className='user-avatar' alt='Avatar' src={currentUser.image} />
         </span>}
       <main>

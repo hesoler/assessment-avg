@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useGames } from '../hooks/useGames.js'
 
 export const FilterGames = () => {
-  const { searchGameByName, getTeamsByGame, addUserToTeam } = useGames()
+  const { teamsAddedUser, searchGameByName, getTeamsByGame, addUserToTeam } = useGames()
   const [filterGames, setFilterGames] = useState('')
   const [gameTeams, setGameTeams] = useState([])
 
@@ -50,7 +50,9 @@ export const FilterGames = () => {
                   </span>
                 </td>
                 <td>
-                  <input className='add-to-team' type='button' value='+' onClick={() => addUserToTeam(team.id)} />
+                  {!teamsAddedUser.includes(team.id)
+                    ? <input className='add-to-team' type='button' value='+' onClick={() => addUserToTeam(team)} />
+                    : ''}
                 </td>
               </tr>
             )
