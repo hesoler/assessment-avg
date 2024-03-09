@@ -1,8 +1,10 @@
-# React + Vite
+# React + Vite: Gamor Site
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este es un proyecto que implementé para dar solución a un ejercicio de prueba técnica de desarrollador web front-end.
 
-Currently, two official plugins are available:
+## Objetivos a evaluar
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [x] Maquetación y diseño responsive
+- [x] Cambio de tema de color
+- [x] Login y autenticación
+- [x] Filtro de búsqueda
