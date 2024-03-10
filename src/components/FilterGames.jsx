@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useGames } from '../hooks/useGames.js'
+import filterButton from '../assets/filter.svg'
 
 export const FilterGames = () => {
   const { teamsAddedUser, searchGameByName, getTeamsByGame, addUserToTeam } = useGames()
@@ -21,7 +22,7 @@ export const FilterGames = () => {
     <span className='filter-games'>
       <span className='top-filter'>
         <input type='search' className='search-field' placeholder='Search Game' onChange={handleSearch} onKeyDownCapture={makeSearch} />
-        <input type='image' src='/src/assets/filter.svg' alt='Change Filter' />
+        <input type='image' src={filterButton} alt='Change Filter' />
       </span>
       <table className='search-results' cellPadding='0'>
         <tbody>
