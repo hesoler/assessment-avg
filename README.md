@@ -11,8 +11,8 @@ Este es un proyecto que implementé para dar solución a un ejercicio de prueba 
 
 ### Ejecución
 
-Abrir una consola dentro del proyecto y ejecutar los comandos <code>yarn | npm install</code> y <code>yarn dev | npm run dev</code>, en ese orden. El proyecto se lanzará en la url <http://localhost:5173/>
+Abrir una consola dentro del proyecto y ejecutar los comandos <code>yarn | npm install</code> y <code>yarn dev | npm run dev</code>, en ese orden. El proyecto se lanzará en la url <http://localhost:5173/>.
 
 ### Despliegue
 
-Para visitar el sitio pulse el siguiente [enlace](https://hesoler-assessment-avg.netlify.app)
+Para visitar el sitio pulse el siguiente [enlace](https://hesoler-assessment-avg.netlify.app).
