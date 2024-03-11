@@ -6,12 +6,12 @@ export const Panel2 = () => {
   const { fortniteCharacterImageUrl, scheme } = useScheme()
 
   const miniCharacter1Url = scheme === 'dark'
-    ? 'src/assets/fortnite-character-3.png'
-    : 'src/assets/fortnite-character-5.png'
+    ? '/images/fortnite-character-3.png'
+    : '/images/fortnite-character-5.png'
 
   const miniCharacter2Url = scheme === 'dark'
-    ? 'src/assets/fortnite-character-4.png'
-    : 'src/assets/fortnite-character-6.png'
+    ? '/images/fortnite-character-4.png'
+    : '/images/fortnite-character-6.png'
 
   const beforeAttribute = {
     miniature1: scheme === 'dark' ? 'eye-view' : '',

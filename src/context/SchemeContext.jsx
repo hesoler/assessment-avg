@@ -18,13 +18,13 @@ export const SchemeProvider = ({ children }) => {
       setScheme('dark')
       setLabelText('Dark theme')
       document.documentElement.setAttribute('toggleScheme', 'dark')
-      setFortniteCharacterImageUrl('src/assets/fortnite-character-2.png')
+      setFortniteCharacterImageUrl('images/fortnite-character-2.png')
     } else {
       setChecked(false)
       setScheme('light')
       setLabelText('Light theme')
       document.documentElement.setAttribute('toggleScheme', 'light')
-      setFortniteCharacterImageUrl('src/assets/fortnite-character-1.png')
+      setFortniteCharacterImageUrl('/images/fortnite-character-1.png')
     }
   }
 
