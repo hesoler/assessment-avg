@@ -2,6 +2,10 @@
 
 Este es un proyecto que implementé para dar solución a un ejercicio de prueba técnica de desarrollador web front-end.
 
+## Vista previa
+
+![vista-previa](./public/preview/1-site_preview_dark_theme.png)
+
 ## Objetivos a evaluar
 
 - [x] Maquetación y diseño responsive
@@ -11,7 +15,7 @@ Este es un proyecto que implementé para dar solución a un ejercicio de prueba 
 
 ### Ejecución
 
-Abrir una consola dentro del proyecto y ejecutar los comandos <code>yarn | npm install</code> y <code>yarn dev | npm run dev</code>, en ese orden. El proyecto se lanzará en la url <http://localhost:5173/>.
+Abrir una consola dentro del proyecto y ejecutar los comandos `yarn | npm install` y `yarn dev | npm run dev`, en ese orden. El proyecto se lanzará en la url <http://localhost:5173/>.
 
 ### Despliegue
 
