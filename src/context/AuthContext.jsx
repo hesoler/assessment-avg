@@ -1,6 +1,7 @@
 import { createContext, useState } from 'react'
 import { users } from '../mock/users.json'
 import { useNavigate } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 export const AuthContext = createContext()
 
@@ -43,4 +44,8 @@ export const AuthProvider = ({ children }) => {
       {children}
     </AuthContext.Provider>
   )
+}
+
+AuthProvider.propTypes = {
+  children: PropTypes.node.isRequired
 }

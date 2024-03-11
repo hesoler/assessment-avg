@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useGenerateRandomColor } from '../hooks/useGenerateRandomColor'
+import PropTypes from 'prop-types'
 
 export const Category = ({ title, imageUrl, last }) => {
   const { color, generateColor } = useGenerateRandomColor()
@@ -22,4 +23,10 @@ export const Category = ({ title, imageUrl, last }) => {
       </li>
     </span>
   )
+}
+
+Category.propTypes = {
+  title: PropTypes.string.isRequired,
+  imageUrl: PropTypes.string,
+  last: PropTypes.bool
 }
