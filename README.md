@@ -1,6 +1,6 @@
 # React + Vite: Gamor Site
 
-Este es un proyecto que implementé para dar solución a un ejercicio de prueba técnica de desarrollador web front-end.
+Este es un proyecto que implementé para dar solución a un ejercicio de prueba técnica de desarrollador web front-end. Para el login y el filtro se utilizaron datos generados, los cuales se encuentran en [esta](./src/mock/) ruta del proyecto.
 
 ## Vista previa
 
