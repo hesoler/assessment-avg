@@ -29,14 +29,14 @@ span.hi {
 }
 
 main {
-  margin: 0 auto; /* Centra horizontalmente */
+  margin-inline: auto; /* Centra horizontalmente */
   display: grid;
   gap: 5rem;
   max-width: 1260px;
 }
 main .section {
   background-color: var(--backgroundArticlesContainer);
-  margin: 0 auto; /* Centra horizontalmente */
+  margin-inline: auto;
   border-radius: 15px;
   width: 100%;
 }
@@ -57,4 +57,20 @@ main .section {
 footer {
   margin-top: 4rem;
   text-align: center;
+}
+
+@media (max-width: 920px) {
+  main #panels {
+    width: fit-content;
+  }
+  main #categories {
+    display: grid;
+    justify-content: center;
+    place-items: center;
+  }
+}
+@media (max-width: 600px) {
+body {
+  width: fit-content;
+}
 }
