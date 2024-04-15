@@ -6,7 +6,6 @@ export const SchemeProvider = ({ children }) => {
   const [checked, setChecked] = useState(false)
   const [scheme, setScheme] = useState('')
   const [labelText, setLabelText] = useState('')
-
   const [fortniteCharacterImageUrl, setFortniteCharacterImageUrl] = useState('')
 
   const handleColorSchemeChange = event => {
