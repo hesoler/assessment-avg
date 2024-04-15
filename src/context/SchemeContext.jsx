@@ -8,8 +8,6 @@ export const SchemeProvider = ({ children }) => {
   const [labelText, setLabelText] = useState('')
 
   const [fortniteCharacterImageUrl, setFortniteCharacterImageUrl] = useState('')
-  const [boxFortniteCharacter1Position, setBoxFortniteCharacter1Position] = useState(0)
-  const [boxFortniteCharacter2Position, setBoxFortniteCharacter2Position] = useState(0)
 
   const handleColorSchemeChange = event => {
     // se verifica por checked cuando se cambia el modo desde la página
@@ -53,14 +51,10 @@ export const SchemeProvider = ({ children }) => {
       scheme,
       labelText,
       fortniteCharacterImageUrl,
-      boxFortniteCharacter1Position,
-      boxFortniteCharacter2Position,
       setChecked,
       setScheme,
       setLabelText,
-      handleColorSchemeChange,
-      setBoxFortniteCharacter1Position,
-      setBoxFortniteCharacter2Position
+      handleColorSchemeChange
     }}
     >
       {children}
