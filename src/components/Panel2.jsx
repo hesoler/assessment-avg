@@ -3,19 +3,19 @@ import { MiniatureSquare } from './MiniatureSquare'
 import addUserIcon from '../assets/add_user_profile_person_avatar_icon.svg'
 
 export const Panel2 = () => {
-  const { fortniteCharacterImageUrl, scheme } = useScheme()
+  const { fortniteCharacterImageUrl, schemeColor } = useScheme()
 
-  const miniCharacter1Url = scheme === 'dark'
+  const miniCharacter1Url = schemeColor === 'dark'
     ? '/images/fortnite-character-3.png'
     : '/images/fortnite-character-5.png'
 
-  const miniCharacter2Url = scheme === 'dark'
+  const miniCharacter2Url = schemeColor === 'dark'
     ? '/images/fortnite-character-4.png'
     : '/images/fortnite-character-6.png'
 
   const beforeAttribute = {
-    miniature1: scheme === 'dark' ? 'eye-view' : '',
-    miniature2: scheme !== 'dark' ? 'like-heart' : ''
+    miniature1: schemeColor === 'dark' ? 'eye-view' : '',
+    miniature2: schemeColor !== 'dark' ? 'like-heart' : ''
   }
 
   return (
@@ -38,8 +38,8 @@ export const Panel2 = () => {
         classPositionAndBadge={`mini-character-2 ${beforeAttribute.miniature2}`}
         imageUrl={miniCharacter2Url}
       />
-      <span className={`upper-curve-${scheme}`} />
-      <span className={`lower-curve-${scheme}`} />
+      <span className={`upper-curve-${schemeColor}`} />
+      <span className={`lower-curve-${schemeColor}`} />
       <img className='fortnite-character' src={fortniteCharacterImageUrl} alt='Fortnite Character' />
     </article>
   )

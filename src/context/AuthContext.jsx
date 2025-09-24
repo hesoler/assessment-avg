@@ -1,18 +1,22 @@
-import { createContext, useState } from 'react'
-import { users } from '../mock/users.json'
-import { useNavigate } from 'react-router-dom'
 import PropTypes from 'prop-types'
+import { createContext, useMemo, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { users } from '../mock/users.json'
 
 export const AuthContext = createContext()
 
 export const AuthProvider = ({ children }) => {
-  const [currentUser, setCurrentUser] = useState(window.localStorage.getItem('user'))
+  const [currentUser, setCurrentUser] = useState(
+    window.localStorage.getItem('user')
+  )
   const [error, setError] = useState('')
   const navigate = useNavigate()
 
   const loginAction = (credentials) => {
     const { username, password } = credentials
-    const exist = users.find(user => user.username === username && user.password === password)
+    const exist = users.find(
+      (user) => user.username === username && user.password === password
+    )
 
     if (exist) {
       setCurrentUser(exist)
@@ -31,19 +35,19 @@ export const AuthProvider = ({ children }) => {
     navigate('/login')
   }
 
-  return (
-    <AuthContext.Provider value={{
+  const obj = useMemo(
+    () => ({
       currentUser,
       error,
       setCurrentUser,
       setError,
       loginAction,
       logOut
-    }}
-    >
-      {children}
-    </AuthContext.Provider>
+    }),
+    [currentUser, error]
   )
+
+  return <AuthContext.Provider value={obj}>{children}</AuthContext.Provider>
 }
 
 AuthProvider.propTypes = {
